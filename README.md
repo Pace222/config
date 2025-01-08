@@ -1,2 +1,4 @@
-# config
-A small repository hosting configuration files for various tools and environments. 
+# My configuration files
+This repository contains my configuration files for the following tools:
+- `.config/nvim`: Neovim
+
