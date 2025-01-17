@@ -1,4 +1,4 @@
-# Requirements
+# Neovim requirements
 
 - True color terminal (I use iTerm2 for MacOS)
 - Nerd font (I use MesloLGS NF Mono)
