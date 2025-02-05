@@ -6,7 +6,6 @@ local keymap = vim.keymap -- for conciseness
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
-keymap.set("i", "JK", "<ESC>", { desc = "Exit insert mode with JK" })
 
 keymap.set("n", "U", "<C-r>", { desc = "Redo" })
 
