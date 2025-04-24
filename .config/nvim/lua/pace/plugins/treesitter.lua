@@ -34,8 +34,10 @@ return {
         "markdown",
         "markdown_inline",
         "python",
+        "rust",
         "vim",
         "vimdoc",
+        "yaml",
       },
       incremental_selection = {
         enable = true,
