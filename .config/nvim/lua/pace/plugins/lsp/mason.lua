@@ -31,7 +31,6 @@ return {
         "clangd",
         "cssls",
         "dockerls",
-        "gopls",
         "html",
         "jsonls",
         "lua_ls",
