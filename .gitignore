@@ -2,4 +2,5 @@
 
 !.gitignore
 !.config
+!.ssh
 !.tmux.conf
