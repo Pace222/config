@@ -4,6 +4,7 @@
 - Nerd font (I use MesloLGS NF Mono)
 - C compiler (for `make`)
 - ripgrep
+- fd
 - Node.js
 - lazygit
 - tmux
