@@ -7,9 +7,6 @@ return {
     { "folke/neodev.nvim", opts = {} },
   },
   config = function()
-    -- import lspconfig plugin
-    local lspconfig = require("lspconfig")
-
     -- import cmp-nvim-lsp plugin
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
@@ -91,6 +88,31 @@ return {
           },
           completion = {
             callSnippet = "Replace",
+          },
+        },
+      },
+    })
+
+    -- rust_analyzer specific config (tuned for the huge ic monorepo, ~555 crates)
+    vim.lsp.config("rust_analyzer", {
+      capabilities = capabilities,
+      settings = {
+        ["rust-analyzer"] = {
+          cargo = {
+            -- Use a dedicated target dir, otherwise rust-analyzer and our own
+            -- cargo/bazel invocations deadlock on target/debug/.cargo-lock
+            targetDir = true,
+            -- Needed to resolve prost/tonic generated code (requires protoc on PATH)
+            buildScripts = { enable = true },
+          },
+          procMacro = { enable = true },
+          -- Check only the current package on save, never the whole workspace
+          check = { workspace = false },
+          -- Don't eagerly index every crate at startup
+          cachePriming = { enable = false },
+          numThreads = 8,
+          files = {
+            exclude = { "target", "bazel-out", "bazel-bin", "bazel-testlogs", ".git" },
           },
         },
       },
